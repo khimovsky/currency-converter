@@ -1,0 +1,4 @@
+<app-exchange-rate-item
+  *ngIf="exchangeRates$ | async as exchange"
+  [currency]="exchange"
+/>

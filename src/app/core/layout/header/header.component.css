@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  gap: 10px;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+}
+
+a {
+  cursor: pointer;
+}

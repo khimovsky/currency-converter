@@ -1,0 +1,32 @@
+<form>
+  <select (change)="onFirstSelectChange($event)">
+    @for (option of options; track $index) {
+      <option
+        [value]="option"
+        [selected]="option === (firstSelectedOption$ | async)"
+      >{{ option }}</option>
+    }
+  </select>
+    <input
+      #firstCurrencyInput
+      type="number"
+      name="currency"
+      [value]="(firstInput$ | async)! | numberSlice: 0:5"
+    >
+</form>
+<form>
+  <select (change)="onSecondSelectChange($event)">
+    @for (option of options; track $index) {
+      <option
+        [value]="option"
+        [selected]="option === (secondSelectedOption$ | async)"
+      >{{ option }}</option>
+    }
+  </select>
+    <input
+      #secondCurrencyInput
+      type="number"
+      name="currency"
+      [value]="(secondInput$ | async)! | numberSlice: 0:5"
+    >
+</form>
